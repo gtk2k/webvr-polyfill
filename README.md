@@ -21,7 +21,7 @@ experiences.
 do the equivalent of mouselook. It also uses keyboard arrows and WASD
 keys to look around the scene with the keyboard.
 
-`WebSocketBridgeHMDPositionSensorVRDevice` OcuBri(WebSocketブリッジアプリ)を使って  
+`WebSocketBridgeHMDPositionSensorVRDevice` [OcuBri](https://github.com/gtk2k/OcuBri)(WebSocketブリッジアプリ)を使って  
 WebVR非対応のブラウザーでもOculus Riftを使用できるようにするデバイスオブジェクト。(Windowsのみ対応)  
 
 ## Open issues
