@@ -15,10 +15,13 @@
 var CardboardHMDVRDevice = require('./cardboard-hmd-vr-device.js');
 var GyroPositionSensorVRDevice = require('./gyro-position-sensor-vr-device.js');
 var MouseKeyboardPositionSensorVRDevice = require('./mouse-keyboard-position-sensor-vr-device.js');
+window.normalModeInputDevice = new MouseKeyboardPositionSensorVRDevice();
+var WebSocketBridgeHMDPositionSensorVRDevice = require('./websocket-bridge-hmd-position-sensor-vr-device.js');
 // Uncomment to add positional tracking via webcam.
 //var WebcamPositionSensorVRDevice = require('./webcam-position-sensor-vr-device.js');
 var HMDVRDevice = require('./base.js').HMDVRDevice;
 var PositionSensorVRDevice = require('./base.js').PositionSensorVRDevice;
+var HMDPositionSensorVRDevice = require('./base.js').HMDPositionSensorVRDevice;
 
 function WebVRPolyfill() {
   this.devices = [];
@@ -43,7 +46,8 @@ WebVRPolyfill.prototype.enablePolyfill = function() {
   if (this.isMobile()) {
     this.devices.push(new GyroPositionSensorVRDevice());
   } else {
-    this.devices.push(new MouseKeyboardPositionSensorVRDevice());
+    //this.devices.push(new MouseKeyboardPositionSensorVRDevice());
+    this.devices.push(new WebSocketBridgeHMDPositionSensorVRDevice());
     // Uncomment to add positional tracking via webcam.
     //this.devices.push(new WebcamPositionSensorVRDevice());
   }
@@ -54,6 +58,7 @@ WebVRPolyfill.prototype.enablePolyfill = function() {
   // Provide the CardboardHMDVRDevice and PositionSensorVRDevice objects.
   window.HMDVRDevice = HMDVRDevice;
   window.PositionSensorVRDevice = PositionSensorVRDevice;
+  window.HMDPositionSensorVRDevice = HMDPositionSensorVRDevice;
 };
 
 WebVRPolyfill.prototype.getVRDevices = function() {

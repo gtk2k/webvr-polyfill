@@ -36,6 +36,12 @@ function PositionSensorVRDevice() {
 }
 PositionSensorVRDevice.prototype = new VRDevice();
 
+
+function HMDPositionSensorVRDevice() {
+}
+HMDPositionSensorVRDevice.prototype = new VRDevice();
+
 module.exports.VRDevice = VRDevice;
 module.exports.HMDVRDevice = HMDVRDevice;
 module.exports.PositionSensorVRDevice = PositionSensorVRDevice;
+module.exports.HMDPositionSensorVRDevice = HMDPositionSensorVRDevice;
