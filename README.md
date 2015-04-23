@@ -30,3 +30,7 @@ WebVR非対応のブラウザーでもOculus Riftを使用できるようにす�
   for setting them for non-Cardboard devices.
 - Provide new types of tracking, perhaps using the web camera for 3
   translational degrees of freedom, eg: <http://topheman.github.io/parallax/>
+
+
+## 動作確認用サンプルページ
+[こちら](https://github.com/gtk2k/gtk2k.github.io)に動作確認用サンプルページを用意しました。
